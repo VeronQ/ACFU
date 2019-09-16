@@ -4,7 +4,8 @@
     "type": "library",
     "license": "MIT",
     "keywords": [
-
+        "WordPress",
+        "ACF"
     ],
     "authors": [
         {
@@ -12,6 +13,7 @@
             "email": "qveron@outlook.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
       "php": ">=7.0"
     }
