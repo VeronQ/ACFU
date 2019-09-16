@@ -1,20 +1,25 @@
 {
-    "name": "veronq/acfu",
-    "description": "A collection of useful PHP Classes for Advanced Custom Fields",
-    "type": "library",
-    "license": "MIT",
-    "keywords": [
-        "WordPress",
-        "ACF"
-    ],
-    "authors": [
-        {
-            "name": "Quentin Véron",
-            "email": "qveron@outlook.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-      "php": ">=7.0"
+  "name": "veronq/acfu",
+  "description": "A collection of useful PHP Classes for Advanced Custom Fields",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "WordPress",
+    "ACF"
+  ],
+  "authors": [
+    {
+      "name": "Quentin Véron",
+      "email": "qveron@outlook.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Veronq\\Acfu\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  }
 }
