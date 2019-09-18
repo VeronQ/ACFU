@@ -7,19 +7,27 @@ namespace VeronQ\ACFU;
  *
  * @package ACFU\Map
  */
-class Map {
+class Map
+{
+
   protected $lat;
+
   protected $lng;
+
   protected $address;
+
   protected $classes;
 
   /**
    * Map constructor.
    *
-   * @param array  $field
-   * @param string $classes
+   * @param  array   $field
+   * @param  string  $classes
    */
-  public function __construct( array $field = [], string $classes = '' ) {
+  public function __construct(
+    array $field = [],
+    string $classes = ''
+  ) {
     $this->lat     = $field['lat'];
     $this->lng     = $field['lng'];
     $this->address = $field['address'];
@@ -28,7 +36,9 @@ class Map {
     $this->render();
   }
 
-  public function render(): void {
+  public function render(): void
+  {
     echo "<div {$this->classes} data-lat=\"{$this->lat}\" data-lng=\"{$this->lng}\" data-address=\"{$this->address}\"></div>";
   }
+
 }
