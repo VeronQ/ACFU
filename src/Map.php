@@ -7,38 +7,31 @@ namespace VeronQ\ACFU;
  *
  * @package ACFU\Map
  */
-class Map
+class Map extends ACFU
 {
-
-  protected $lat;
-
-  protected $lng;
-
-  protected $address;
-
-  protected $classes;
 
   /**
    * Map constructor.
    *
-   * @param  array   $field
-   * @param  string  $classes
+   * @param  array         $field
+   * @param  string|array  $attr
    */
   public function __construct(
-    array $field = [],
-    string $classes = ''
+    array $field,
+    $attr = ''
   ) {
-    $this->lat     = $field['lat'];
-    $this->lng     = $field['lng'];
-    $this->address = $field['address'];
-    $this->classes = $classes ? "class=\"{$classes}\"" : null;
-
+    $default_attr = [
+      'data-lat' => $field['lat'],
+      'data-lng' => $field['lng'],
+      'address'  => $field['address'],
+    ];
+    $this->handleAttr($attr, $default_attr);
     $this->render();
   }
 
   public function render(): void
   {
-    echo "<div {$this->classes} data-lat=\"{$this->lat}\" data-lng=\"{$this->lng}\" data-address=\"{$this->address}\"></div>";
+    echo "<div {$this->attr_html}></div>";
   }
 
 }

@@ -7,50 +7,39 @@ namespace VeronQ\ACFU;
  *
  * @package ACFU\Link
  */
-class Link
+class Link extends ACFU
 {
-
-  protected $href;
-
-  protected $target;
-
-  protected $classes;
 
   protected $slot;
 
-  protected $rel;
 
   /**
    * Link constructor.
    *
-   * @param  array   $field
-   * @param  string  $classes
-   * @param  mixed   $slot
+   * @param  array         $field
+   * @param  mixed         $slot
+   * @param  string|array  $attr
    */
   public function __construct(
     array $field,
-    string $classes = '',
-    $slot = null
+    $slot = '',
+    $attr = ''
   ) {
-    $this->href    = $field['url'];
-    $this->target  = !empty ($field['target']) ? "target=\"{$field['target']}\""
-      : null;
-    $this->classes = $classes ? "class=\"{$classes}\"" : null;
-    $this->slot    = $slot ?? $field['title'];
-
-    if (preg_match("#^{$_SERVER['HTTP_HOST']}#", $this->href) === 0) {
-      $this->rel = "rel=\"noopener noreferrer\"";
-    }
-
+    $default_attr = [
+      'href'   => $field['url'],
+      'target' => $field['target'],
+      'rel'    => strpos($field['url'], $_SERVER['HTTP_HOST'])
+        ? ''
+        : 'noopener noreferrer',
+    ];
+    $this->slot = $slot ?: $field['title'];
+    $this->handleAttr($attr, $default_attr);
     $this->render();
   }
 
   public function render(): void
   {
-    if (empty ($this->href)) {
-      return;
-    }
-    echo "<a href=\"{$this->href}\" {$this->target} {$this->classes} {$this->rel}>
+    echo "<a {$this->attr_html}>
             {$this->slot}
           </a>";
   }

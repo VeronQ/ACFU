@@ -7,43 +7,33 @@ namespace VeronQ\ACFU;
  *
  * @package ACFU\Image
  */
-class Image
+class Image extends ACFU
 {
-
-  protected $src;
-
-  protected $alt;
-
-  protected $title;
-
-  protected $classes;
 
   /**
    * Image constructor.
    *
-   * @param  array   $field
-   * @param  string  $size
-   * @param  string  $classes
+   * @param  array         $field
+   * @param  string        $size
+   * @param  string|array  $attr
    */
   public function __construct(
     array $field = [],
-    string $size = '',
-    string $classes = ''
+    string $size = 'post-thumbnail',
+    $attr = ''
   ) {
-    $this->src     = $size ? $field['sizes'][$size] : $field['url'];
-    $this->alt     = $field['alt'] ? "alt=\"{$field['alt']}\"" : null;
-    $this->title   = $field['title'] ? "title=\"{$field['title']}\"" : null;
-    $this->classes = $classes ? "class=\"{$classes}\"" : null;
-
+    $default_attr = [
+      'src'   => $size ? $field['sizes'][$size] : $field['url'],
+      'alt'   => $field['alt'],
+      'title' => $field['title'],
+    ];
+    $this->handleAttr($attr, $default_attr);
     $this->render();
   }
 
   public function render(): void
   {
-    if (empty ($this->src)) {
-      return;
-    }
-    echo "<img src=\"{$this->src}\" {$this->alt} {$this->title} {$this->classes} />";
+    echo "<img {$this->attr_html} />";
   }
 
 }
