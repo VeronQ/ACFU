@@ -17,7 +17,7 @@ $ composer require veronq/acfu
 
 ## API
 
-### File(field, ?classes, ?slot)
+### File(field, ?slot, ?attr)
 
 ```php
 use VeronQ\ACFU\File;
@@ -27,7 +27,7 @@ $post_file = get_field('my_acf_file');
 new File($post_file);
 ```
 
-### Image(field, ?size, ?classes)
+### Image(field, ?size, ?attr)
 
 ```php
 use VeronQ\ACFU\Image;
@@ -37,7 +37,7 @@ $post_image = get_field('my_acf_image');
 new Image($post_image);
 ```
 
-### Link(field, ?classes, ?slot)
+### Link(field, ?slot, ?attr)
 
 ```php
 use VeronQ\ACFU\Link;
@@ -47,7 +47,7 @@ $post_link = get_field('my_acf_link');
 new Link($post_link);
 ```
 
-### Map(field, ?classes)
+### Map(field, ?attr)
 
 ```php
 use VeronQ\ACFU\Map;
