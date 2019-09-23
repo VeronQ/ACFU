@@ -21,9 +21,9 @@ class Map extends ACFU
     $attr = ''
   ) {
     $default_attr = [
-      'data-lat' => $field['lat'],
-      'data-lng' => $field['lng'],
-      'data-address'  => $field['address'],
+      'data-lat'     => $field['lat'],
+      'data-lng'     => $field['lng'],
+      'data-address' => $field['address'],
     ];
     $this->handleAttr($attr, $default_attr);
     $this->render();
