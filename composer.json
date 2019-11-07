@@ -13,7 +13,6 @@
       "email": "qveron@outlook.com"
     }
   ],
-  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "VeronQ\\ACFU\\": "src/"
