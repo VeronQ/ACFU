@@ -1,6 +1,6 @@
 # ACFU
 
-> A collection of useful PHP Classes for Advanced Custom Fields
+> A collection of helpful PHP Classes for Advanced Custom Fields plugin (WordPress)
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/VeronQ/ACFU/blob/master/LICENSE)
 [![Latest Unstable Version](https://poser.pugx.org/veronq/acfu/v/unstable)](https://packagist.org/packages/veronq/acfu)
