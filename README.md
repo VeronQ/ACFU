@@ -3,7 +3,8 @@
 > A collection of helpful PHP Classes for Advanced Custom Fields plugin (WordPress)
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/VeronQ/ACFU/blob/master/LICENSE)
-[![Latest Unstable Version](https://poser.pugx.org/veronq/acfu/v/unstable)](https://packagist.org/packages/veronq/acfu)
+[![Latest Stable Version](https://poser.pugx.org/veronq/acfu/v)](//packagist.org/packages/veronq/acfu)
+[![Total Downloads](https://poser.pugx.org/veronq/acfu/downloads)](//packagist.org/packages/veronq/acfu)
 
 ## Prerequisite
 
